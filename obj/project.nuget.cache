@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3c6Hmct0wcI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marcos Paulo Calera\\Desktop\\PROGRAMCAO\\Projetos\\OrdersAPI\\OrdersAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
