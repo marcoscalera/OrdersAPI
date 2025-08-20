@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aD4eT5k6t4g=",
+  "dgSpecHash": "i7mwKmLOYJA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Marcos Paulo Calera\\Desktop\\PROGRAMCAO\\Projetos\\OrdersAPI\\OrdersAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
     "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\Marcos Paulo Calera\\.nuget\\packages\\microsoft.build.framework\\17.8.3\\microsoft.build.framework.17.8.3.nupkg.sha512",

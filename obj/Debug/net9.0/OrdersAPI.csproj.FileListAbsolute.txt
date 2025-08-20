@@ -151,3 +151,4 @@ C:\Users\Marcos Paulo Calera\Desktop\PROGRAMCAO\Projetos\OrdersAPI\bin\Debug\net
 C:\Users\Marcos Paulo Calera\Desktop\PROGRAMCAO\Projetos\OrdersAPI\bin\Debug\net9.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Marcos Paulo Calera\Desktop\PROGRAMCAO\Projetos\OrdersAPI\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Marcos Paulo Calera\Desktop\PROGRAMCAO\Projetos\OrdersAPI\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Marcos Paulo Calera\Desktop\PROGRAMCAO\Projetos\OrdersAPI\bin\Debug\net9.0\FluentValidation.dll

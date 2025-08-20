@@ -1,3 +1,4 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(builder.Configu
 
 builder.Services.AddScoped<ICommandHandler<CreateOrderCommand, OrderDto>, CreateOrderCommandHandler>();
 builder.Services.AddScoped<IQueryHandler<GetOrderByIdQuery, OrderDto>, GetOrderByIdQueryHandler>();
+builder.Services.AddScoped<IQueryHandler<GetOrderSummariesQuery, List<OrderSummaryDto>>, GetOrderSummariesQueryHandler>();
+builder.Services.AddScoped<IValidator<CreateOrderCommand>, CreateOrderCommandValidator>();
 
 var app = builder.Build();
 
@@ -14,11 +17,19 @@ app.MapPost("/api/orders", async (ICommandHandler<CreateOrderCommand, OrderDto> 
     //await context.Orders.AddAsync(order);
     //await context.SaveChangesAsync();
 
-    var createdOrder = await handler.HandleAsync(command);
-    if (createdOrder == null)
-        return Results.BadRequest("Failed to create order");
+    try
+    {
+        var createdOrder = await handler.HandleAsync(command);
+        if (createdOrder == null)
+            return Results.BadRequest("Failed to create order");
 
-    return Results.Created($"/api/orders/{createdOrder.Id}", createdOrder);
+        return Results.Created($"/api/orders/{createdOrder.Id}", createdOrder);
+    }
+    catch (ValidationException ex)
+    {
+        var errors = ex.Errors.Select(e => new { PropertyName = e.PropertyName, ErrorMessage = e.ErrorMessage});
+        return Results.BadRequest(errors);
+    }
 });
 
 app.MapGet("/api/orders/{id}", async (IQueryHandler<GetOrderByIdQuery, OrderDto> handler, int id) =>
@@ -30,6 +41,12 @@ app.MapGet("/api/orders/{id}", async (IQueryHandler<GetOrderByIdQuery, OrderDto>
         return Results.NotFound();
         
     return Results.Ok(order);
+});
+
+app.MapGet("/api/orders", async (IQueryHandler<GetOrderSummariesQuery, List<OrderSummaryDto>> handler) =>
+{
+    var summaries = await handler.HandleAsync(new GetOrderSummariesQuery());
+    return Results.Ok(summaries);
 });
 
 app.Run();
