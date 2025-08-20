@@ -50,9 +50,15 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
+            "microsoft.entityframeworkcore.design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.8, )"
+            },
+            "microsoft.entityframeworkcore.sqlite": {
+              "target": "Package",
+              "version": "[9.0.8, )"
             }
           },
           "imports": [
